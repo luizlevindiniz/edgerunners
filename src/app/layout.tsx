@@ -83,7 +83,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
 	return (
-		<html lang="en" suppressHydrationWarning className="scroll-smooth">
+		<html lang="pt-BR" suppressHydrationWarning className="scroll-smooth">
 			<body className={`${inter.variable} ${roboto_mono.variable} antialiased`}>
 				<div id="app-outlet" className="flex min-h-full w-full justify-center">
 					{children}

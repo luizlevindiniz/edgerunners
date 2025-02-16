@@ -9,7 +9,7 @@ export function MarathonCard({ marathon }: Readonly<MarathonCardProps>) {
 	const endingDate = new Date(marathon.ending_date);
 
 	return (
-		<div className="card bg-blue-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden max-w-[600px]">
+		<div className="card bg-blue-100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden max-w-[600px]">
 			{marathon.thumbnail_url && (
 				<div className="h-72 w-full overflow-hidden rounded-t-lg">
 					<Image

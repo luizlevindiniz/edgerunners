@@ -19,11 +19,11 @@ export default async function Home() {
 	}
 
 	return (
-		<main>
-			<h1 className="font-roboto-mono mb-2 text-2xl">
-				Calendario de corridas{" "}
+		<main className="container mx-auto p-4">
+			<h1 className="font-roboto-mono mb-6 text-3xl font-bold ">
+				Calendário de Corridas
 			</h1>
-			<section className="flex flex-col gap-4">
+			<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{marathons.map((marathon) => (
 					<MarathonCard key={marathon.id} marathon={marathon} />
 				))}

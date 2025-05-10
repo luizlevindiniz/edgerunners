@@ -1,8 +1,8 @@
 import { Marathon } from "@/types";
 import { createClient } from "./config/supabase/server";
-import { MarathonCard } from "@/components/Card/Card";
+import { Home } from "@/components/Home";
 
-export default async function Home() {
+export default async function HomePage() {
 	const supabase = await createClient();
 
 	const { data, error } = await supabase.from("marathons").select("*");
@@ -23,11 +23,7 @@ export default async function Home() {
 			<h1 className="font-roboto-mono mb-6 text-3xl font-bold ">
 				Calendário de Corridas
 			</h1>
-			<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{marathons.map((marathon) => (
-					<MarathonCard key={marathon.id} marathon={marathon} />
-				))}
-			</section>
+			<Home marathons={marathons} />
 		</main>
 	);
 }

@@ -14,14 +14,16 @@ export function MarathonCard({ marathon }: Readonly<MarathonCardProps>) {
 		<Link href={`/marathon/${marathon.id}`} className="block">
 			<div className="card bg-blue-100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden max-w-[600px] h-full flex flex-col">
 				{marathon.thumbnail_url && (
-					<div className="w-full overflow-hidden rounded-t-lg min-h-[220px]">
+					<div className="relative w-full overflow-hidden rounded-t-lg min-h-[220px] aspect-[16/9] bg-blue-200">
 						<Image
 							src={marathon.thumbnail_url}
 							alt={marathon.name ?? "Marathon image"}
-							width={500}
-							height={500}
-							className="h-full w-full"
+							fill
 							priority
+							placeholder="blur"
+							blurDataURL={"/logo.png"}
+							className="object-fit"
+							sizes="w-full h-full"
 						/>
 					</div>
 				)}
